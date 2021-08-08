@@ -226,7 +226,7 @@ async function starts() {
 				} catch {
 					ppimg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZMuEpVFO1Pq_b3Fcru6Ti-Ww2TGVmsEbtzw&usqp=CAU'
 				}
-				teks = `OlÃ¡ @${num.split('@')[0]}\nBem vindo ao grupo *${mdata.subject}*\n\nEspero que goste, leia as regrasâ¤ï¸`
+				teks = `Ola @${num.split('@')[0]}\nBem vindo ao grupo *${mdata.subject}*\n\nEspero que goste, leia as regras/n/ndigite /help para conhecer mais sobre meus comandos`
 				let buff = await getBuffer(ppimg)
 				client.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
 				client.sendMessage(from, tujuh, MessageType.audio, {quoted: mek, mimetype: 'audio/mp4', ptt:true})

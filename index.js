@@ -920,6 +920,14 @@ async function starts() {
 		case 'iri':
 			client.sendPtt(from, './lindy/iri.mp3', {quoted: mek, ptt:true})
 			break
+                case 'menu3':
+				if (isBanned) return reply(mess.only.benned)    
+                                  men = 
+                  `├「 *VOTING*
+                   ├${emoji} *${prefix}voting*
+                   ├${emoji} *${prefix}delvote*
+                   index.sendMessage(from, men, MessageType.text, { quoted: Kyz ,contextInfo: {"mentionedJid": [sender], forwardingScore: 0, isForwarded: true }})
+                    break
 				case 'ytmp3':
 			    	if (!isPremium) return reply(mess.only.premium)
                    reply(mess.wait)

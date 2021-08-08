@@ -279,26 +279,26 @@ async function starts() {
 			const isCmd = body.startsWith(prefix)
 
 			mess = {
-					wait: 'â¬â³â­ Espere',
-					success: 'ï¸â¬ âœ” â­ Sucesso ðŸ–¤',
+					wait: '[⏳] Espere',
+					success: 'Ativado com Sucess',
 					levelon: 'â¬ âœ” â­ *leveling* *ativado*',
 					leveloff: ' â¬ X â­  *leveling* *desativado*',
 					levelnoton: 'â¬ X â­ *leveling nÃ£o ativado*',
 					levelnol: '*error* 0 Â°-Â°',
 					error: {
 				stick: '*Bem, falhe, tente novamente ^_^*',
-				Iv: 'Link invÃ¡lidoâ˜¹ï¸'
+				Iv: 'Link invalido'
 				},
 				only: {
-					group: '[â³] Este comando so pode ser usado em grupos!',
-					premium: '[â—] ESTE PEDIDO E SO PARA *USUARIOS PREMIUMS*',
-					mod: '[â—] ESTE PEDIDO Ã‰ ESPECIFICO PARA USUARIO MOD*',
+					group: '[❌] Este comando so pode ser usado em grupos!',
+					premium: '[❌] ESTE PEDIDO E SO PARA *USUARIOS PREMIUMS*',
+					mod: '[â—❌] ESTE PEDIDO Ã‰ ESPECIFICO PARA USUARIO MOD*',
 					benned: 'banidoðŸ¤ªðŸ‘',
-					ownerG: '[â—] Este e um recurso especial para o meu dono',
-					ownerB: '[â—] Este Ã© um recurso especial para o meu dono',
+					ownerG: '[❌] Este e um recurso especial para o meu dono',
+					ownerB: '[❌] Este Ã© um recurso especial para o meu dono',
 					userB: `â”€â”€ã€Œ LISTA ã€â”€â”€\nOlÃ¡ Kak !\nDesculpe. Voce nao esta¡ registrado como amigo. Registre-se para fazer amizade com o bot por meio, \n\nCommand : ${prefix}daftar nome|idade\nExemplo : ${prefix}daftar Joao|20\n\n*>`,
-					admin: '[â—] Este comando sÃ³ pode ser usado por administradores de grupo! âŒ',
-					Badmin: ' [â—] Este comando sÃ³ pode ser usado quando o bot se torna administrador!',
+					admin: '[❌] Este comando sÃ³ pode ser usado por administradores de grupo! âŒ',
+					Badmin: ' [❌] Este comando sÃ³ pode ser usado quando o bot se torna administrador!',
 				}
 			}
 

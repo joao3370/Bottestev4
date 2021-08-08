@@ -51,7 +51,8 @@ const { limit } = require('./database/menu/limit*/
 const apivhtear = 'apivhtear';
 const apibarbar = 'apibarbar';
 const tobzkey = 'apitobz';
-const BotName = 'Bot'; 
+const BotName = 'Bot';
+// File Database
 const voting = JSON.parse(fs.readFileSync('./database/voting.json'))
 const { addVote, delVote } = require('./database/vote.js')
 const instagram = 'http://www.instagram.com/'; 
@@ -289,15 +290,15 @@ async function starts() {
 				Iv: 'Link invÃ¡lidoâ˜¹ï¸'
 				},
 				only: {
-					group: '[â³] Este comando sÃ³ pode ser usado em grupos! âŒ',
-					premium: '[â—] ESTE PEDIDO Ã‰ SO PARA *USUÃRIOS PREMIUMS*',
-					mod: '[â—] ESTE PEDIDO Ã‰ ESPECÃFICO PARA USUARIO MOD*',
+					group: '[â³] Este comando so pode ser usado em grupos!',
+					premium: '[â—] ESTE PEDIDO E SO PARA *USUARIOS PREMIUMS*',
+					mod: '[â—] ESTE PEDIDO Ã‰ ESPECIFICO PARA USUARIO MOD*',
 					benned: 'banidoðŸ¤ªðŸ‘',
-					ownerG: '[â—] Este Ã© um recurso especial para o meu dono âŒ',
-					ownerB: '[â—] Este Ã© um recurso especial para o meu dono âŒ',
-					userB: `â”€â”€ã€Œ LISTA ã€â”€â”€\nOlÃ¡ Kak !\nDesculpe, irmÃ£. VocÃª nÃ£o estÃ¡ registrado como amigo. Registre-se para fazer amizade com o bot por meio, \n\nCommand : ${prefix}daftar nama|idade\nExemplo : ${prefix}daftar Causs|17\n\nâ”€â”€ã€Œ LOLIZINHA ã€â”€â”€`,
+					ownerG: '[â—] Este e um recurso especial para o meu dono',
+					ownerB: '[â—] Este Ã© um recurso especial para o meu dono',
+					userB: `â”€â”€ã€Œ LISTA ã€â”€â”€\nOlÃ¡ Kak !\nDesculpe. Voce nao esta¡ registrado como amigo. Registre-se para fazer amizade com o bot por meio, \n\nCommand : ${prefix}daftar nome|idade\nExemplo : ${prefix}daftar Joao|20\n\n*>`,
 					admin: '[â—] Este comando sÃ³ pode ser usado por administradores de grupo! âŒ',
-					Badmin: ' [â—] Este comando sÃ³ pode ser usado quando o bot se torna administrador! âŒ',
+					Badmin: ' [â—] Este comando sÃ³ pode ser usado quando o bot se torna administrador!',
 				}
 			}
 
@@ -358,7 +359,7 @@ async function starts() {
                 addLevelingXp(sender, amountXp)
                 if (requiredXp <= getLevelingXp(sender)) {
                     addLevelingLevel(sender, 1)
-                    await reply(`*ã€Œ LEVEL UP ã€*\n\nâž¸ *Nome*: ${sender}\nâž¸ *XP*: ${getLevelingXp(sender)}\nâž¸ *Level*: ${getLevel} -> ${getLevelingLevel(sender)}\n\nParabÃ©ns!!  ðŸŽ‰ðŸŽ‰`)
+                    await reply(`*ã€Œ LEVEL UP ã€*\n\nâž¸ *Nome*: ${sender}\nâž¸ *XP*: ${getLevelingXp(sender)}\nâž¸ *Level*: ${getLevel} -> ${getLevelingLevel(sender)}\n\nParabens!!`)
                 }
             } catch (err) {
                 console.error(err)
@@ -580,7 +581,7 @@ async function starts() {
 	        if (messagesC.includes("://chat.whatsapp.com/")){
 		if (!isGroup) return
 		if (!isAntiLink) return
-		if (isGroupAdmins) return reply('vc Ã© admin, entÃ£o n irei te dar ban por usar links, rlx ðŸ™‚')
+		if (isGroupAdmins) return reply('vc e admin, entao n irei te dar ban por usar links, rlx')
 		client.updatePresence(from, Presence.composing)
 		if (messagesC.includes("#izinadmin")) return reply("#izinadmin diterima")
 		var kic = `${sender.split("@")[0]}@s.whatsapp.net`

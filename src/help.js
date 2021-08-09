@@ -8,8 +8,7 @@ const help = (prefix, emoji) => {
 
 
 ┌────────꙳ ⃘⃤꙰ ꙳ ⃘⃤꙰ ─────────
-╠══NOTA »
-║${emoji} *${prefix}Pedro*
+╠══NOTA 
 ║
 ╠════════════════════
 ║〘 📁 INFORMAÇÕES 📁〙

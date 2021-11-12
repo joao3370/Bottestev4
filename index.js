@@ -19,6 +19,7 @@ const { gbin } = require('./src/gbin')
 const { gpessoa } = require('./src/gpessoa')
 const { chentai } = require('./src/chentai')
 const { gcpf } = require('./src/gcpf')
+const { y2mateA, y2mateV } = require('./src/y2mate.js')
 const { addsay } = require('./src/addsay')
 const { listsay } = require('./src/listsay')
 const { addfoto } = require('./src/addfoto')
@@ -3670,6 +3671,86 @@ break
 						client.groupDemoteAdmin(from, mentioned)
 					}
 					break
+					case 'play2':
+addFilter(from)
+if (isLimit(sender)) return webPage(linguagem.cash_adquirir(pushname, p), {quoted: mek}) 
+if (args.length < 1) return enviar('Cade o nome da música fof?')
+teks = args.join(' ')
+enviar(mess.espere)
+if (!teks.endsWith("-doc")){
+res = await yts(`${teks}`).catch(e => {
+enviar('_[ ! ] O erro de consulta inserido não existe_')
+})
+let thumbInfo = `❒「  *Youtube Search*  」
+├ *Título :* ${res.all[0].title}
+├ *ID de vídeo :* ${res.all[0].videoId}
+├ *Carregado em :* ${res.all[0].ago}
+├ *Visualizações :* ${res.all[0].views}
+├ *Duração :* ${res.all[0].timestamp}
+├ *Canal :* ${res.all[0].author.name}
+└ *Link do canal :* ${res.all[0].author.url}
+
+*_Aguarde o processo de upload....._*
+`
+sendFileFromUrl(res.all[0].image, image, {quoted: mek, caption: thumbInfo})
+res = await y2mateA(res.all[0].url).catch(e => {
+enviar('_[ ! ] Erro ao entrar no Y2mate Web * Tente repetir*_')
+})
+sendFileFromUrl(res[0].link, audio, {quoted: mek, mimetype: 'audio/mp4', filename: res[0].output})
+}
+if (teks.endsWith("-doc")){
+const tec = teks.split("-doc")
+res = await yts(`${tec}`).catch(e => {
+enviar('_[ ! ] O erro de consulta inserido não existe_')
+})
+let thumbInfo = `❒「  *${botname}*  」
+├ *Título :* ${res.all[0].title}
+├ *ID de vídeo :* ${res.all[0].videoId}
+├ *Carregado em :* ${res.all[0].ago}
+├ *Visualizações :* ${res.all[0].views}
+├ *Duração :* ${res.all[0].timestamp}
+├ *Canal :* ${res.all[0].author.name}
+└ *Link do canal :* ${res.all[0].author.url}
+
+*_Aguarde o processo de upload....._*
+`
+sendFileFromUrl(res.all[0].image, image, {quoted: mek, caption: thumbInfo})
+res = await y2mateA(res.all[0].url).catch(e => {
+enviar('_[ ! ] Erro ao entrar no Y2mate Web * Tente repetir*_')
+})
+sendFileFromUrl(res[0].link, document, {quoted: mek, mimetype: 'audio/mp3', filename: res[0].output})
+}
+break
+					case 'playvid':
+addFilter(from)
+if (isLimit(sender)) return webPage(linguagem.cash_adquirir(pushname, p), {quoted: mek}) 
+if (args.length < 1) return enviar(`_*Sintaxe incorreta...*_\n\nUse assim: ${p + comando} Moça bonita`)
+teks = args.join(' ')
+enviar(mess.espere)
+if (!teks.endsWith("-doc")){
+res = await yts(`${teks}`).catch(e => {
+enviar('_[ ! ] Erro ao baixar e enviar mídia_')
+})
+enviar(`.•♫•♬• Playing ${res.all[0].title} •♬•♫•.`)
+let thumbInfo = `❒「  *${NomeDoBot}*  」
+🎯 *Título:* ${res.all[0].title}
+📼 *ID Video:* ${res.all[0].videoId}
+📆 *Data da postagem :* ${res.all[0].ago}
+♨️ *Visualizações :* ${res.all[0].views}
+⏳ *Duração:* ${res.all[0].timestamp}
+📁 *Canal:* ${res.all[0].author.name}
+📊 *Link do Canal:* ${res.all[0].author.url}
+
+*_Aguarde o processo de download....._*
+`
+sendFileFromUrl(res.all[0].image, image, {quoted: mek, caption: thumbInfo})
+res = await y2mateV(res.all[0].url).catch(e => {
+enviar('_[ ! ] Erro ao entrar no Y2mate Web *Tente repetir*_')
+})
+sendFileFromUrl(res[0].link, video, {quoted: mek, mimetype: 'video/mp4', filename: res[0].output})
+}
+await requestCash(sender)
+break
 				case 'add':
 					if (!isGroup) return reply(mess.only.group)
 					if (!isGroupAdmins) return reply(mess.only.admin)

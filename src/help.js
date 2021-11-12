@@ -129,7 +129,8 @@ const help = (prefix, emoji) => {
 ║${emoji} *${prefix}boatarde*
 ║${emoji} *${prefix}boanoite*
 ║${emoji} *${prefix}setdesc*
-║
+║${emoji} *${prefix}play2*
+║${emoji} *${prefix}playvid*
 ╠══꙳ ⃘⃤꙰ 〘 ESPECIFICO DO BOT 〙꙳ ⃘⃤꙰ ══
 ║
 ║${emoji} *${prefix}clonar [@]*

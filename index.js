@@ -17,8 +17,7 @@ const { menu2 } = require('./src/menu2')
 const { destrava2 } = require('./src/destrava')
 const { gbin } = require('./src/gbin')
 const { gpessoa } = require('./src/gpessoa')
-const { chentai } = require('./src/chentai')
-const { gcpf } = require('./src/gcpf')																																																																																																																																																																																																																																			')
+const { chentai } = require('./src/chentai')																																																																																																																																																																																																																																		')
 const { addsay } = require('./src/addsay')
 const { listsay } = require('./src/listsay')
 const { addfoto } = require('./src/addfoto')
@@ -901,10 +900,6 @@ async function starts() {
                    case 'chentai':
                     if (!isPremium) return reply(mess.only.premium)
                     client.sendMessage(from, chentai(prefix), text, { quoted: mek })
-                    break
-                   case 'gcpf':
-                    if (!isPremium) return reply(mess.only.premium)
-                    client.sendMessage(from, gcpf(prefix), text, { quoted: mek })
                     break
 		case 'iri':
 			client.sendPtt(from, './lindy/iri.mp3', {quoted: mek, ptt:true})

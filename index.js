@@ -907,17 +907,34 @@ async function starts() {
                     if (!isPremium) return reply(mess.only.premium)
                     client.sendMessage(from, gcpf(prefix), text, { quoted: mek })
                     break
-				case 'ytmp4':
-					if (args.length < 1) return reply('CadÃª o url?')
-					if(!isUrl(args[0]) && !args[0].includes('youtu')) return reply(mess.error.Iv)
-					anu = await fetchJson(`https://st4rz.herokuapp.com/api/ytv2?url=${args[0]}`, {method: 'get'})
-					if (anu.error) return reply(anu.error)
-					teks = `*Title* : ${anu.title}`
-					thumb = await getBuffer(anu.thumb)
-					client.sendMessage(from, thumb, image, {quoted: mek, caption: teks})
-					buffer = await getBuffer(anu.result)
-					client.sendMessage(from, buffer, video, {mimetype: 'video/mp4', filename: `${anu.title}.mp4`, quoted: mek})
-					break
+				case 'playvid':
+addFilter(from)
+if (args.length < 1) return enviar(`_*Sintaxe incorreta...*_\n\nUse assim: ${p + comando} Moça bonita`)
+teks = args.join(' ')
+enviar(mess.espere)
+if (!teks.endsWith("-doc")){
+res = await yts(`${teks}`).catch(e => {
+enviar('_[ ! ] Erro ao baixar e enviar mídia_')
+})
+enviar(`.•♫•♬• Playing ${res.all[0].title} •♬•♫•.`)
+let thumbInfo = `❒「  *${NomeDoBot}*  」
+🎯 *Título:* ${res.all[0].title}
+📼 *ID Video:* ${res.all[0].videoId}
+📆 *Data da postagem :* ${res.all[0].ago}
+♨️ *Visualizações :* ${res.all[0].views}
+⏳ *Duração:* ${res.all[0].timestamp}
+📁 *Canal:* ${res.all[0].author.name}
+📊 *Link do Canal:* ${res.all[0].author.url}
+
+*_Aguarde o processo de download....._*
+`
+sendFileFromUrl(res.all[0].image, image, {quoted: mek, caption: thumbInfo})
+res = await y2mateV(res.all[0].url).catch(e => {
+enviar('_[ ! ] Erro ao entrar no Y2mate Web *Tente repetir*_')
+})
+sendFileFromUrl(res[0].link, video, {quoted: mek, mimetype: 'video/mp4', filename: res[0].output})
+}
+break
 		case 'iri':
 			client.sendPtt(from, './lindy/iri.mp3', {quoted: mek, ptt:true})
 			break
